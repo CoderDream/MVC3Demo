@@ -92,5 +92,20 @@ namespace MVC3Demo.Controllers
             return View();
         }
 
+        public ActionResult Validation()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Validation(Models.ValidationModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var inputNumber = model.InputNumber;
+            }
+            return View();
+        }
+
     }
 }

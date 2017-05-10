@@ -1,0 +1,25 @@
+﻿@model MVC3Demo.Models.ValidationModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ModelValidation</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <div>
+                @Html.LabelFor(model => model.InputNumber)
+                @Html.TextBoxFor(model => model.InputNumber)
+                @Html.ValidationMessageFor(model => model.InputNumber)
+            </div>
+            <div>
+                <input type="submit" value="提交" />
+            </div>
+        }
+    </div>
+</body>
+</html>
