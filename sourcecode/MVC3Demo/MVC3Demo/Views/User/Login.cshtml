@@ -1,0 +1,35 @@
+﻿@model MVC3Demo.Models.UserModel
+<!--如果是创建强类型的视图并选择了LoginModel，上面的代码则由vs自动生成，仅仅是一段代码，手写的效果是一样的，所以一般情况我不会勾选“强类型视图”-->
+@{
+    Layout = null;
+}
+<!--Layout用于母板页的布局，在本系列的第四篇文章中会详细讲解-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户登陆</title>
+</head>
+<body>
+    <!--Html.BeginForm()等同于在html代码里写<form>.....</form>是一样的-->
+    @using (Html.BeginForm())
+    {
+        <div>
+            用户名：
+        </div>
+        <div>
+            <!--创建用户名文本框，等同于<input type="text" />-->
+            @Html.TextBoxFor(model => model.UserName)
+        </div>
+        <div>
+            密码：
+        </div>
+        <div>
+            <!--创建用户名文本框，等同于<input type="password" />-->
+            @Html.PasswordFor(model => model.Password)
+        </div>
+        <div>
+            <input type="submit" value="登录" />
+        </div>
+    }
+</body>
+</html>
