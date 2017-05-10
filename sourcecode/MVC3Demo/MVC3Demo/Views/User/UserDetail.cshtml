@@ -1,0 +1,43 @@
+﻿@model MVC3Demo.Models.UserModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户详细</title>
+</head>
+<body>
+    <div>
+        用户名：@Model.UserName
+    </div>
+    <div>
+        密码：@Model.Password
+    </div>
+    <div>
+        性别：
+        @if (Model.Sex == 0)
+        { 
+            @:男
+            }
+        else
+        { 
+            @:女
+                                }
+    </div>
+    <div>
+        年龄：@Model.Age 岁
+    </div>
+    <div>
+        身高：@Model.Height CM
+    </div>
+    <div>
+        体重：@Model.Weight KG
+    </div>
+    <div>
+        毕业院校：@Model.Graduated
+    </div>
+</body>
+</html>

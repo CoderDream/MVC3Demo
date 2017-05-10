@@ -32,5 +32,19 @@ namespace MVC3Demo.Controllers
             return View();
         }
 
+        //UserDetail
+        public ActionResult UserDetail()
+        {
+            Models.UserModel userModel = new Models.UserModel();
+            userModel.UserName = "用户名";
+            userModel.Password = "密码";
+            userModel.Sex = 0;
+            userModel.Age = 30;
+            userModel.Height = 170;
+            userModel.Weight = 70;
+            userModel.Graduated = "毕业院校";
+            return View(userModel);
+        }
+
     }
 }
