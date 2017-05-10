@@ -46,5 +46,51 @@ namespace MVC3Demo.Controllers
             return View(userModel);
         }
 
+        //UserEdit
+        public ActionResult UserEdit()
+        {
+            Models.UserModel userModel = new Models.UserModel();
+            userModel.UserName = "用户名";
+            userModel.Age = 10;
+            //其他....
+            return View(userModel);
+        }
+
+        [HttpPost]//UserEdit
+        public ActionResult UserEdit(Models.UserModel userModel)
+        {
+            Response.Write(userModel.UserName);
+            Response.Write("<br />");
+            Response.Write(userModel.Password);
+            Response.Write("<br />");
+            Response.Write(userModel.Sex);
+            Response.Write("<br />");
+            Response.Write(userModel.Age);
+            Response.Write("<br />");
+            Response.Write(userModel.Height);
+            Response.Write("<br />");
+            Response.Write(userModel.Weight);
+            Response.Write("<br />");
+            Response.Write(userModel.Graduated);
+            Response.Write("<br />");
+            return View();
+        }
+
+        //UserEdit
+        public ActionResult UserEdit_01()
+        {
+            return View();
+        }
+
+        [HttpPost]//UserEdit
+        public ActionResult UserEdit_01(FormCollection form)
+        {
+            Response.Write(form["UserName"]);
+            Response.Write("<br />");
+            Response.Write(form[1]);
+            Response.Write("<br />");
+            return View();
+        }
+
     }
 }

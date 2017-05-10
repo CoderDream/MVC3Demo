@@ -1,0 +1,41 @@
+﻿@model MVC3Demo.Models.UserModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户编辑</title>
+</head>
+<body>
+    @using (@Html.BeginForm())
+    {
+        <div>
+            用户名：@Html.TextBoxFor(model => model.UserName, new { @style = "width:200px" })
+        </div>
+        <div>
+            密码：@Html.PasswordFor(user => user.Password)
+        </div>
+        <div>
+            性别： 男 @Html.RadioButtonFor(user => user.Sex, 0, new { @name = "sex", @checked = "true" })
+            女 @Html.RadioButtonFor(user => user.Sex, 1, new { @name = "sex" })
+        </div>
+        <div>
+            年龄：@Html.TextBoxFor(user => user.Age) 岁
+        </div>
+        <div>
+            身高：@Html.TextBoxFor(user => user.Height) CM
+        </div>
+        <div>
+            体重：@Html.TextBoxFor(user => user.Weight) KG
+        </div>
+        <div>
+            毕业院校：@Html.TextBoxFor(user => user.Graduated)
+        </div>
+        <div>
+            <input type="submit" value="提交" />
+        </div>
+    }    
+</body>
+</html>
