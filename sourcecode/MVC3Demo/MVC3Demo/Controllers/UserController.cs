@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC3Demo.AppCode;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -92,6 +93,7 @@ namespace MVC3Demo.Controllers
             return View();
         }
 
+        [LogActionFilter(LogMessage = "日志写入：Validation方法")]
         public ActionResult Validation()
         {
             return View();
