@@ -1,0 +1,28 @@
+﻿@model MVC3DemoModel.User
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(user => user.UserName)
+    <br />
+    @Model.UserName
+    <br />
+    @Html.LabelFor(user => user.Phone)
+    <br />
+    @Model.Phone
+    <br />
+    @Html.LabelFor(user => user.Residential)
+    <br />
+    @ViewBag.Residential
+    <br />
+    @Html.LabelFor(user => user.FloorNo)
+    <br />
+    @ViewBag.FloorNo
+    <br />
+    @Html.LabelFor(user => user.UnitNo)
+    <br />
+    @ViewBag.UnitNo
+    <br />
+    @Html.LabelFor(user => user.DoorplateNo)
+    <br />
+    @ViewBag.DoorplateNo
+    <br />
+}

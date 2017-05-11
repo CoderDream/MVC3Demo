@@ -1,0 +1,23 @@
+﻿@model MVC3DemoModel.User
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(user => user.UserName)
+    <br />
+    @Html.TextBoxFor(user => user.UserName)
+    <br />
+    @Html.LabelFor(user => user.Phone)
+    <br />
+    @Html.TextBoxFor(user => user.Phone)
+    <br />
+    @Html.LabelFor(user => user.Residential)
+    @Html.DropDownListFor(user => user.Residential, (SelectList)ViewBag.ViewResidential)
+    @Html.LabelFor(user => user.UnitNo)
+    @Html.DropDownListFor(user => user.UnitNo, (SelectList)ViewBag.ViewUnitNo)
+    @Html.LabelFor(user => user.FloorNo)
+    @Html.DropDownListFor(user => user.FloorNo, (SelectList)ViewBag.ViewFloorNo)
+    @Html.LabelFor(user => user.DoorplateNo)
+    @Html.DropDownListFor(user => user.DoorplateNo, (SelectList)ViewBag.ViewDoorplateNo)
+    <br />
+    @Html.HiddenFor(user => user.UserID)
+    <input type="submit" value="修改" />
+}

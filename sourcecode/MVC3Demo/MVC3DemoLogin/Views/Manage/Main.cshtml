@@ -1,0 +1,33 @@
+﻿@model PagedList<MVC3DemoModel.User>
+@using Webdiyer.WebControls.Mvc;
+@using (Html.BeginForm("Main", "Manage", FormMethod.Get))
+{
+    <span>用户名：</span>
+    @Html.TextBox("username", ViewData["username"])
+    <input type="submit" value="查询" />
+}
+@foreach (MVC3DemoModel.User user in Model)
+{
+    @user.UserID<span>---</span>@user.UserName<span>---</span> 
+    @Html.ActionLink("修改", "UserEdit", new { id = user.UserID }) <span>---</span> 
+    @Html.ActionLink("详细", "UserDetail", new { id = user.UserID }) <span>---</span> 
+    @Html.ActionLink("删除", "UserRemove", new { id = user.UserID }, new { @onclick = "return confirm('确定删除吗?');" })<span>---</span> 
+
+    <br />
+}
+<br />
+<br />
+@Html.Pager(Model, new PagerOptions
+{
+    PageIndexParameterName = "id",
+    ShowPageIndexBox = true,
+    FirstPageText = "首页",
+    PrevPageText = "上一页",
+    NextPageText = "下一页",
+    LastPageText = "末页",
+    PageIndexBoxType = PageIndexBoxType.TextBox,
+    PageIndexBoxWrapperFormatString = "请输入页数{0}",
+    GoButtonText = "转到"
+})
+<br />
+>>分页 共有 @Model.TotalItemCount 篇留言 @Model.CurrentPageIndex/@Model.TotalPageCount

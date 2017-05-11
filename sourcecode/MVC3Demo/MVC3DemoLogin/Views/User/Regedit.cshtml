@@ -1,0 +1,54 @@
+﻿@model MVC3DemoModel.User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户注册</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        var App = {
+            refreshCheckCode: function (imgCtr) {
+                $("#" + imgCtr).attr("src", '/Image/GetCheckCode/' + Math.random());
+            }
+        }
+    </script>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(user => user.UserName)
+        @Html.TextBoxFor(user => user.UserName)
+        @Html.ValidationMessageFor(user => user.UserName)
+        <br />
+        @Html.LabelFor(user => user.Password)
+        @Html.PasswordFor(user => user.Password)
+        @Html.ValidationMessageFor(user => user.Password)
+        <br />
+        @Html.LabelFor(user => user.RePassword)
+        @Html.PasswordFor(user => user.RePassword)
+        @Html.ValidationMessageFor(user => user.RePassword)
+        <br />
+        @Html.LabelFor(user => user.Phone)
+        @Html.TextBoxFor(user => user.Phone)
+        @Html.ValidationMessageFor(user => user.Phone)
+        <br />
+        @Html.LabelFor(user => user.Residential)
+        @Html.DropDownListFor(user => user.Residential, (SelectList)ViewBag.Residential)
+        @Html.LabelFor(user => user.UnitNo)
+        @Html.DropDownListFor(user => user.UnitNo, (SelectList)ViewBag.UnitNo)
+        @Html.LabelFor(user => user.FloorNo)
+        @Html.DropDownListFor(user => user.FloorNo, (SelectList)ViewBag.FloorNo)
+        @Html.LabelFor(user => user.DoorplateNo)
+        @Html.DropDownListFor(user => user.DoorplateNo, (SelectList)ViewBag.DoorplateNo)
+        <br />
+        <input type="text" name="checkCode" />
+        <img id="check_img" alt="验证码" src="/Image/GetCheckCode/" height="30" width="80" onclick="App.refreshCheckCode('check_img')" /><span><a
+            href="javascript:App.refreshCheckCode('check_img');">换一换</a></span>
+        <br />
+        <input type="submit" value="注册" /><a href="/User/Login/">登陆</a>
+    }
+</body>
+</html>

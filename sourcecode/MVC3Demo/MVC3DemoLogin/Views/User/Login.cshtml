@@ -1,0 +1,28 @@
+﻿@model MVC3DemoModel.User
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户登陆</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(user => user.UserName)
+        @Html.TextBoxFor(user => user.UserName)
+        @Html.ValidationMessageFor(user => user.UserName)
+        <br />
+        @Html.LabelFor(user => user.Password)
+        @Html.PasswordFor(user => user.Password)
+        @Html.ValidationMessageFor(user => user.Password)
+        <br />
+        @Html.LabelFor(user => user.Remember)
+        @Html.CheckBoxFor(user => user.Remember)
+        <br />
+        <input type="submit" value="登陆" /><a href="/User/Regedit/">注册</a>
+    }
+</body>
+</html>
