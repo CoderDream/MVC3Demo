@@ -39,9 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HZYT.DBUtility">
+      <HintPath>..\..\..\..\..\..\HZYT.DBUtility.dll</HintPath>
+    </Reference>
     <Reference Include="MvcPager, Version=1.5.0.17702, Culture=neutral, PublicKeyToken=f6872c5a09aed72c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MVC3Demo\DLL\MvcPager.dll</HintPath>
+      <HintPath>bin\MvcPager.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="Microsoft.CSharp" />
@@ -116,6 +119,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\MvcPager.dll" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
